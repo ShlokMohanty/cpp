@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+class student{
+public:
+int studentid;
+string studentname;
+void studentname()
+void studentid()
+{
+cout<<"the studentname is: "<<studentname<<"/n";
+cout<<"the studentid is: "<<studentid<<"/n";
+}
+};
+int main()
+{
+student s1;
+s1.studentname="shlok";
+s1.studentid="500076333";
+s1.studentname()
+s1.studentid()
+return 0;
+}
