@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool checkredundancy(string& str)
+{
+stack<char> s;
+for(auto& ch:str)
+{
+if(ch==")")
+{
+char top=s.top();
+s.pop();
+bool flag=true;
+while(top!=")")
+{
+if(ch=="+"||ch=="-"||ch=="*"||ch=="/")
+{
+flag=false;
+}top=s.top();
+s.pop();
+}
+if(flag==true)
+{
+return true;
+}
+else{
+s.push(ch);
+}
+void findRedundancy(string& str)
+{
+bool ans=checkredundancy(str);
+if(ans==true)
+{
+cout<<"yes"<<endl;
+}
+else
+{
+cout<<"no"<<endl;
+}
+int main()
+{
+string str="((a+b))";
+findRedundancy(str);
+string str="(a+(b)/c)";
+findRedundancy(str);
+string str="(a+b+(c))";
+findRedundancy(str);
+return 0;
+}
