@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int countBracketReversals(char input[]){
+	// Write your code here
+int len=strlen(input); //correct
+    if(len%2)
+    {
+		return -1;
+    }
+    
+    stack<char> s;
+    for(int i=0;i<len;i++)
+    {
+	if(input[i]=='}' && !s.empty()) 
+	{
+  		if(s.top()=='{')     	{
+      		s.pop();
+     	}
+    	else
+    	{
+    		s.push(input[i]);
+    	}
+	}
+    else 
+    {
+		s.push(input[i]);
+    }
+	}
+    
+  int red_len=s.size(); 
+    int n=0;
+    while(!s.empty() && s.top()=='{') 
+    {
+		s.pop();
+        n++;
+    }
+    
+    return (red_len/2 + n%2); 
+    
+} 
