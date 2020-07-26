@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct Node{
+int data;
+struct Node* left;
+struct Node* right;
+};
+struct Node* newNode(int data)
+{
+struct Node* Node=new struct Node();
+Node->data=data;
+Node->left=NULL;
+Node->right=NULL;
+return Node;
+}
+int main()
+{
+struct Node *rootNode=newNode(10);
+cout<<"\t\t\t"<<"the general tree created is a s follows"<<endl;
+cout<<"\t\t\t"<<"/"<<"\\"<<rootNode->data<<endl;
+rootNode->left=newNode(20);
+rootNode->right=newNode(30);
+cout<<"\t\t\t"<<rootNode->left->data<<" "<<rootNode->right->data<<endl;
+rootNode->left->left=newNode(40);
+cout<<"\t\t\t"<<"/"<<endl;
+cout<<"\t\t     "<<rootNode->left->left->data<<endl;
+return 0;
+}
